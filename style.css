@@ -1,58 +1,59 @@
-/* display to do app */
-.screen{
-    border: 3px solid;
-    border-bottom: 4px solid;
-    border-color: rgba(41, 108, 5, 0.82);
-    border-radius: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    align-items: center;
-    background: rgb(202, 247, 21);
+
+/* background  */
+
+body{
+    background-image : linear-gradient(rgb(251, 181, 52),rgba(189, 128, 16, 0.702),rgba(225, 176, 84, 0.939));
+    color: whitesmoke;
+    font-size: 20px;
+    
 }
-/* task entering tab section */
-.body{
-    margin-top: 10px;
-    margin-left: 10px;
+/* ToDo app structure */
+
+#interface{
+    background-color: white;
+}
+/* input menu */
+.input-field{
+    background-color: rgb(165, 106, 106);
     display: flex;
     justify-content: center;
-
-
+    padding: 15px;
 }
-#textbox{
+#input-box{
     padding: 10px;
-    width: 400px;
+    width: 500px;
+
 }
-#btn{
-    background-image: linear-gradient(50deg,green,pink,yellow);
+#set-btn{
     padding: 10px;
     margin-left: 5px;
-    border-radius: 4px;
-    width: 70px;
+    width:70px;
+    border-radius: 5px;
+    background-color: rgba(43, 171, 226, 0.959);
+    color: whitesmoke;
+    cursor: pointer;
+}
+/* list */
+.list-container{
+    background-color: rgb(165, 106, 106);
+}
+ul{
+    padding: 0px;
 
 }
-/* task entering tab finished */
-
-/* list odf tasks tab */
-.myList{
+.oneData{
     display: flex;
-    
-
+}
+.oneData li{
+    list-style-type: none;
+    padding: 10px;
+    padding-left: 20px;
 }
 
-
-li{
-    list-style: none;
-    background-image: linear-gradient(30deg,red,yellow,orange);
-    border-radius: 10px;
+.done,.edit,.cancel{
+    margin-left: 10px;
     padding: 15px;
-    margin: 10px;
+    background-image: radial-gradient(rgb(238, 230, 230),white,rgb(88, 120, 40));
+    cursor: pointer;
 }
-.button1,.button2{
-    border-radius: 10px;
-    margin: 10px;
-    background-image: url(./assets/images/btntexjpeg.jpeg);
-    color: rgb(4, 255, 121);
-    font-size: 20px;
-}
+ 

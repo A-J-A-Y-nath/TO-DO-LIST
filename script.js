@@ -1,47 +1,79 @@
+let inputBox = document.getElementById("input-box");
+let set_btn = document.getElementById("set-btn");
+let listContainer = document.querySelector(".list-container");
 
+set_btn.addEventListener('click',function () {
+if (set_btn.value == 'set'){
+    //if there is no data written
+    if(inputBox.value == ''){
+        return;
+    }
 
-var btn = document.getElementById("btn");
-btn.addEventListener("click",addTask);
+    // creating oneData div element
 
-function addTask(){
-    var inputbox = document.getElementById("textbox");
-    task=inputbox.value;
-    if(task=='') return;
+    let oneData = document.createElement('div');
+    oneData.className='oneData';
 
-    var ul = document.getElementById("list_values");
-    var listItem = document.createElement("li");
-    listItem.innerHTML=task;
-    listItem.className='list';
-    var divList = document.createElement("div")
-    divList.className = 'myList';
-    divList.appendChild(listItem);
-    ul.appendChild(divList);
-    var button1= document.createElement("button");
-    button1.className='button1'
-    button1.innerHTML = "&#x2713;";
-    divList.appendChild(button1);
-    var button2= document.createElement("button");
-    button2.innerHTML = "&#x274c;";
-    button2.className='button2';
-    divList.appendChild(button2);
-    let btn1=document.getElementsByClassName("button1");
-    let btn2=document.getElementsByClassName("button2");
-    for(let i=0;i<btn1.length;i++){
-        btn1[i].addEventListener("click",done);
-        btn2[i].addEventListener("click",remove);
-        function done(){
-            var list = document.getElementsByClassName("list");
-            list[i].style.textDecoration = "line-through";
-        }
-        function remove(){
-            let myList = document.getElementsByClassName("myList");
-            myList[i].remove();
-           
-        }
-    } 
-    inputbox.value='';
-}
+    //creating buttons div element inside oneData div element
+    let buttons = document.createElement('div')
+    buttons.className='buttons'
 
+    // creating the element li
 
+    let li = document.createElement('li');
+    li.innerHTML = inputBox.value;
+    
+    //creating buttons
 
+    let done = document.createElement('button');
+    done.innerHTML = "&#x2713;"
+    done.className = "done";
+    done.style.color = "green";
+    let cancel = document.createElement('button');
+    cancel.innerHTML = "&#x274c;"
+    cancel.className = "cancel";
+    let edit = document.createElement('button');
+    edit.innerHTML = "&#x270D"
+    edit.className = "edit";
 
+    // appending list,done,cancell,edit to buttons div element to represent one row with
+    // one list data and 3 buttons in buttons div such as done cancel edit
+
+ 
+    buttons.appendChild(done);
+    buttons.appendChild(cancel);
+    buttons.appendChild(edit);
+
+    // appending list and buttons to oneData
+
+    oneData.appendChild(li);
+    oneData.appendChild(buttons);
+
+    //appending oneData to listcontainer
+
+    listContainer.appendChild(oneData);
+
+    //defining functions
+
+    done.addEventListener('click',function(){
+        li.style.textDecoration = "line-through";
+    })
+
+    cancel.addEventListener('click', function(){
+        oneData.remove();
+    })
+
+    edit.addEventListener('click',function(){
+        inputBox.value = li.innerHTML;
+        set_btn.value = 'ok';
+        set_btn.addEventListener('click',function(){
+            if (set_btn.value == 'ok'){
+                li.innerHTML = inputBox.value;
+                set_btn.value = 'set';
+            }
+        })
+
+    })
+
+inputBox.value = '';
+}});

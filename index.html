@@ -8,13 +8,17 @@
     <title>To-Do List</title>
 </head>
 <body>
-<div class="screen">
-<div class="body">
-    <input type="text" name="textbox" placeholder="Enter the tasks" id="textbox" >
-    <input type="button" id="btn" value="set">
+<div id="interface">
+<div class="input-field">
+    <input type="text" name="textbox" placeholder="Enter the tasks" id="input-box" >
+    <input type="button" id="set-btn" value="set">
 </div>
     <div id="list">
-       <ul id="list_values"></ul>
+       <ul>
+        <div class="list-container" >
+            <div class="oneData"></div>
+        </div>
+       </ul>
     </div>
 </div>
 </body>
