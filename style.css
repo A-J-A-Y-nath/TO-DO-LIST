@@ -2,9 +2,10 @@
 /* background  */
 
 body{
-    background-image : linear-gradient(rgb(251, 181, 52),rgba(189, 128, 16, 0.702),rgba(225, 176, 84, 0.939));
+    /* background-image : linear-gradient(rgb(251, 181, 52),rgba(189, 128, 16, 0.702),rgba(225, 176, 84, 0.939)); */
     color: whitesmoke;
     font-size: 20px;
+    transition: background-color 2s ease-in;
     
 }
 /* ToDo app structure */
@@ -14,7 +15,7 @@ body{
 }
 /* input menu */
 .input-field{
-    background-color: rgb(165, 106, 106);
+    background-color: rgb(48, 215, 95);
     display: flex;
     justify-content: center;
     padding: 15px;
@@ -35,7 +36,7 @@ body{
 }
 /* list */
 .list-container{
-    background-color: rgb(165, 106, 106);
+    background-color: rgb(48, 215, 95);
 }
 ul{
     padding: 0px;
@@ -43,6 +44,9 @@ ul{
 }
 .oneData{
     display: flex;
+    border: 5px solid;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .oneData li{
     list-style-type: none;
@@ -54,6 +58,11 @@ ul{
     margin-left: 10px;
     padding: 15px;
     background-image: radial-gradient(rgb(238, 230, 230),white,rgb(88, 120, 40));
+    border-radius: 30px;
     cursor: pointer;
+}
+.buttons{
+    position: absolute;
+    right: 0;
 }
  
