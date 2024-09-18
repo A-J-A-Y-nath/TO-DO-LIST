@@ -76,6 +76,8 @@ else if(set_btn.value == 'ok'){
     if(editingItem){
         editingItem.innerHTML = inputBox.value;
         set_btn.value = 'set';
+        inputBox.value = '';
     }
+
 }
 });
