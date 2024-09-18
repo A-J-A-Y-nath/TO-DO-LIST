@@ -1,6 +1,7 @@
 let inputBox = document.getElementById("input-box");
 let set_btn = document.getElementById("set-btn");
 let listContainer = document.querySelector(".list-container");
+let editingItem = null;
 
 set_btn.addEventListener('click',function () {
 if (set_btn.value == 'set'){
@@ -66,14 +67,15 @@ if (set_btn.value == 'set'){
     edit.addEventListener('click',function(){
         inputBox.value = li.innerHTML;
         set_btn.value = 'ok';
-        set_btn.addEventListener('click',function(){
-            if (set_btn.value == 'ok'){
-                li.innerHTML = inputBox.value;
-                set_btn.value = 'set';
-            }
-        })
-
+        editingItem = li;
     })
 
 inputBox.value = '';
-}});
+}
+else if(set_btn.value == 'ok'){
+    if(editingItem){
+        editingItem.innerHTML = inputBox.value;
+        set_btn.value = 'set';
+    }
+}
+});
